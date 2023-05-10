@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>ANTES DE CONTINUAR!</title>
+	<style>
+		body {
+			background-color: #FFFFFF; /* fundo branco */
+			font-family: Arial, sans-serif; /* fonte padrão */
+			text-align: center; /* centralizar conteúdo na página */
+			margin: 0; /* remover margens padrão */
+		}
+
+		h1 {
+  font-size: 2.5rem; /* tamanho da fonte */
+  margin-top: 2rem; /* espaçamento acima do título */
+  margin-bottom: 2rem; /* espaçamento abaixo do título */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* sombra preta com deslocamento x=2px e y=2px, desfoque de 4px e opacidade de 50% */
+
+		}
+
+		button {
+			background-color: #4CAF50; /* cor de fundo do botão SIM */
+			color: #FFFFFF; /* cor do texto do botão SIM */
+			font-size: 1.5rem; /* tamanho da fonte do botão */
+			border: none; /* remover borda padrão */
+			padding: 0.5rem 2rem; /* espaçamento interno do botão */
+			margin-right: 1rem; /* espaçamento entre os botões */
+			border-radius: 0.25rem; /* arredondar as bordas do botão */
+			cursor: pointer; /* mudar o cursor do mouse quando passar sobre o botão */
+			transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* suavizar a transição de cor de fundo, tamanho e sombra */
+			box-shadow: 0px 4px 8px rgba(76, 175, 80, 0.2); /* adicionar sombra ao botão */
+		}
+
+		button:hover {
+			background-color: #3E8E41; /* cor de fundo do botão SIM quando passar o mouse */
+			transform: scale(1.1); /* aumentar o tamanho do botão */
+			box-shadow: 0px 8px 16px rgba(76, 175, 80, 0.4); /* aumentar a sombra do botão */
+		}
+
+		button.no {
+			background-color: #f44336; /* cor de fundo do botão NÃO */
+			color: #FFFFFF; /* cor do texto do botão NÃO */
+			box-shadow: 0px 4px 8px rgba(244, 67, 54, 0.2); /* adicionar sombra ao botão */
+		}
+
+		button.no:hover {
+			background-color: #d32f2f; /* cor de fundo do botão NÃO quando passar o mouse */
+			transform: scale(1.1); /* aumentar o tamanho do botão */
+			box-shadow: 0px 8px 16px rgba(244, 67, 54, 0.4); /* aumentar a sombra do botão */
+		}
+	</style>
+</head>
+<body>
+	<h1>ESPERA!, por acaso vc me segue no tiktok?</h1>
+<button onclick="exibirMensagem()">Sim</button>
+<button class="no" onclick="fecharJanela()">Não</button>
+
+<script>
+function exibirMensagem() {
+  // Cria um elemento <p> com a mensagem que deseja exibir
+  var mensagem = document.createElement("p");
+  mensagem.innerText = "Sério? muito obrigado ;)";
+
+//cor do botão
+mensagem.style.color = "green";
+  
+  // Adiciona o elemento à página abaixo do botão "Sim"
+  var botaoSim = document.querySelector("button:first-of-type");
+  botaoSim.parentNode.insertBefore(mensagem, botaoSim.nextSibling);
+
+  // Define um tempo de espera de 2 segundos para remover a mensagem e abrir a página
+  setTimeout(function() {
+    mensagem.remove(); // remove a mensagem da página
+    window.open("https://exemplo.com"); // abre a página desejada em uma nova janela
+  }, 2000);
+}
+
+function fecharJanela() {
+  window.close(); // fecha a janela atual
+}
+</script>
+
+
+</body>
+</html>
